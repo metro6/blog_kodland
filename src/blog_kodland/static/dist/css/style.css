@@ -1,0 +1,10 @@
+body {
+  font-family: Montserrat, sans-serif;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=style.css.map */

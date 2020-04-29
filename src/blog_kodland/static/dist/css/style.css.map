@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.styl"],"names":[],"mappings":"AAAA;EACE,oCAAA;;AAGF;;;EACE,uBAAA","file":"style.css","sourcesContent":["body\n  font-family Montserrat, sans-serif\n\n\n*, ::after, ::before\n  box-sizing border-box"]}
