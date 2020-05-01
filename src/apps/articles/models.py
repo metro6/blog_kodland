@@ -19,4 +19,4 @@ class Article(models.Model):
         verbose_name_plural = _('Articles')
 
     def __str__(self):
-        return '{}/{}'.format(str(self.id), self.author.username)
+        return '{}/{}'.format(str(self.id), self.article_name)
