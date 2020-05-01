@@ -1,6 +1,19 @@
 # blog_kodland
 
-Запуск проекта:
+<b>Описание проекта:</b>
+
+У сайта есть две страницы:
+<ul>
+<li>Главная страница, со списком последних 10 статей</li>
+<li>Страница для добавления поста с формой, доступна по URL /add_article</li>
+</ul>
+<b>Недостатки в работе:</b>
+<ul>
+<li>Проект не доделан в части верстки!</li>
+<li>При верстке сайта не используется materialize</li>
+</ul> 
+
+Запуск проекта (через docker-compose):
 ```
 git clone https://github.com/metro6/blog_kodland.git
 cd blog_kodland
@@ -28,6 +41,7 @@ cp blog_kodland/src/custom_settings/custom_settings.py.example blog_kodland/src/
 - nginx
 - gunicorn
 - django
+- DRF
 - postgresql
 
 Можно так же запустить проект как мы обычно привыкли при работе с Docker
@@ -35,3 +49,5 @@ cp blog_kodland/src/custom_settings/custom_settings.py.example blog_kodland/src/
 (sudo) docker-compose build
 (sudo) docker-compose up
 ```
+
+Если нужно запустить проект без docker, вы знаете как это сделать :)
