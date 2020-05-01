@@ -1,3 +1,15 @@
 -load static i18n
-header.container-custom(style="min-height:81px;display:flex;")
-  | хедер
+header
+    .container
+        .header-links
+            .left-menu
+                a.brand-logo(href="")
+                    img(src="{% static 'dist/img/svg/logo.svg' %}")
+                p {{head_text}}
+            .right-menu
+                a(href="#")
+                    img(src="{% static 'dist/img/svg/email-ico.svg' %}")
+                a(href="#")
+                    img.user-logo(src="{% static 'dist/img/png/Uchenik.png' %}")
+                a(href="#")
+                    img(src="{% static 'dist/img/svg/logout-ico.svg' %}")

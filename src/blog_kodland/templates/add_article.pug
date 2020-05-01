@@ -1,0 +1,65 @@
+{% extends "base.pug" %}
+-load static
+-block content
+  .container
+      .add-article-container
+        h1 Добавить статью
+        form#send_article
+            {% csrf_token %}
+            .left
+                input(type='text', name='article_name', placeholder='Введите название статьи')
+                input(type='textarea', name='text')
+            .right
+                input#send_button(type='submit', value='Опубликовать')
+                .upload-image
+                    p Загрузить изображение
+                    .preview
+                        img#image_upload_preview
+                        .close
+                    input.inputfile#inputfile(type='file', name='image')
+                    label#labelinputfile(for='inputfile') Выбрать
+
+  script.
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#image_upload_preview').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+            $('.preview').addClass('active');
+            $('#labelinputfile').hide();
+        } else {
+            $('.preview').removeClass('active');
+            $('#labelinputfile').show();
+        }
+    }
+
+    $("#inputfile").change(function () {
+        readURL(this);
+    });
+
+    $('.preview .close').on('click', function(){
+        $('#inputfile').val('');
+        readURL($("#inputfile"));
+    })
+
+    $("#send_article").on('submit', function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+
+        $.ajax({
+            url: '/api/articles/create/',
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function(data){
+              alert('Сообщение успешно отправлено!');
+            },
+            error: function(data){
+              console.log('Ошибка, повторите позже!');
+            },
+         });
+
+    })

@@ -10,7 +10,6 @@ from .models import *
 class ArticleCreateView(generics.CreateAPIView):
     serializer_class = ArticleSerializer
     queryset = Article.objects.all()
-    authentication_classes = (TokenAuthentication,)
 
 
 class ArticleListView(generics.ListAPIView):

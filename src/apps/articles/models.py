@@ -8,8 +8,9 @@ User = get_user_model()
 # Create your models here.
 
 class Article(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    created_on = models.DateTimeField(_('Created'), auto_created=True)
+    # author = models.ForeignKey(User, on_delete=models.CASCADE)
+    created_on = models.DateTimeField(_('Created'), auto_now_add=True)
+    article_name = models.CharField(_('Article name'), max_length=1024)
     text = models.CharField(_('Text'), max_length=1024, null=False, blank=False)
     image = models.ImageField(_('Image'), upload_to='img_articles', null=True, blank=True)
 

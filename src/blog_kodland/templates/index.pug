@@ -1,4 +1,36 @@
 {% extends "base.pug" %}
 -load static
 -block content
-  | главная страница
+  .container
+    .index-container
+      .top-article
+        .content
+            .icons
+              span.new new
+              span.likes 25
+              span.comments 25
+              span.views 25
+            h2 Почему подросткам стоит изучать программирование?
+            p Объясняем почему словосочетание «программирование для подростков» не должно вызывать скептическую улыбку и какие полезные навыки приобретают ребята, изучая программирование.
+            button Читать
+        .article-picture
+            img(src="{% static 'dist/img/png/1Statya_3.png'%}")
+  .bottom-line
+  .container
+    .index-container
+      .other-articles-container
+        .other-articles-head
+          h2 Другие статьи
+          .filter
+            img(src="{% static 'dist/img/svg/filter-ico.svg'%}")
+        .other-articles
+          for article in res_articles
+            if article.true_article == 0
+                .article
+            else
+                .article
+                    p.created {{article.article_info.created_on}}
+                    p.article-name {{article.article_info.article_name}}
+                    p.text {{article.article_info.text}}
+                    if article.article_info.image
+                        p.img {{article.article_info.image.url}}

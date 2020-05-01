@@ -34,6 +34,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     url(r'^$', blog_kodland.main, name="home"),
+    url(r'^add_article$', blog_kodland.add_article),
     prefix_default_language=True,
 )
 

@@ -4,10 +4,12 @@ html
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     title blog_kodland
+    link(rel="stylesheet", type="text/css", href="{% static 'dist/css/fonts.css' %}")
     link(rel="stylesheet", type="text/css", href="{% static 'dist/css/style.css' %}")
-    link(rel="stylesheet", type="text/css", href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
     script(src="{% static 'dist/js/vendor/jquery-3.3.1.min.js' %}")
     script(src="{% static 'dist/js/vendor/jquery.cookie.js' %}")
+    script(src="{% static 'dist/js/vendor/jquery.uploadPreview.min.js' %}")
+
 
   body
     include header.pug
